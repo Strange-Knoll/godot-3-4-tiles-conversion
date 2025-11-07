@@ -1,17 +1,24 @@
 {
 	"name": "TileMap",
-	"atlas_path": "res://dev-terrain-atlas.png",
-	"tile_ids": [
-		0,
-		1
+	"cell_size": [
+		200,
+		200
 	],
-	"tile_regions": [
-		"(0, 0, 1600, 1600)",
-		"(0, 0, 3072, 1792)"
-	],
-	"cell_size": "(200, 130)",
 	"cell_quadrant_size": 16,
-	"cell_custom_transform": "((200, 0), (0, 200), (0, 0))",
+	"cell_custom_transform": [
+		[
+			200,
+			0
+		],
+		[
+			0,
+			200
+		],
+		[
+			0,
+			0
+		]
+	],
 	"cell_half_offest": 2,
 	"cell_tile_origin": 0,
 	"cell_y_sort": false,
@@ -22,11 +29,17 @@
 	"collision_use_parent": false,
 	"collision_use_kinematic": false,
 	"collision_friction": 1,
+	"collision_bounce": 0,
+	"collision_layer": 1,
+	"collision_mask": 1,
+	"bake_nav": false,
+	"nav_layers": 1,
+	"occluder_light_mask": 1,
 	"cells": [
 		{
 			"x": 0,
 			"y": 0,
-			"id": "(0, 0)",
+			"id": 2,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -34,7 +47,7 @@
 		{
 			"x": 1,
 			"y": 0,
-			"id": "(2, 0)",
+			"id": 3,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -42,7 +55,7 @@
 		{
 			"x": 2,
 			"y": 0,
-			"id": "(1, 0)",
+			"id": 4,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -50,7 +63,7 @@
 		{
 			"x": 3,
 			"y": 0,
-			"id": "(0, 0)",
+			"id": 5,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -58,7 +71,55 @@
 		{
 			"x": 4,
 			"y": 0,
-			"id": "(5, 0)",
+			"id": 6,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 11,
+			"y": 0,
+			"id": 4,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 12,
+			"y": 0,
+			"id": 4,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 13,
+			"y": 0,
+			"id": 4,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 14,
+			"y": 0,
+			"id": 4,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 15,
+			"y": 0,
+			"id": 4,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 16,
+			"y": 0,
+			"id": 4,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -66,7 +127,7 @@
 		{
 			"x": 0,
 			"y": 1,
-			"id": "(0, 0)",
+			"id": 7,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -74,7 +135,7 @@
 		{
 			"x": 1,
 			"y": 1,
-			"id": "(2, 0)",
+			"id": 8,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -82,7 +143,7 @@
 		{
 			"x": 2,
 			"y": 1,
-			"id": "(1, 0)",
+			"id": 9,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -90,7 +151,7 @@
 		{
 			"x": 0,
 			"y": 2,
-			"id": "(0, 0)",
+			"id": 10,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -98,7 +159,7 @@
 		{
 			"x": 1,
 			"y": 2,
-			"id": "(2, 0)",
+			"id": 11,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -106,7 +167,7 @@
 		{
 			"x": 2,
 			"y": 2,
-			"id": "(1, 0)",
+			"id": 12,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -114,7 +175,39 @@
 		{
 			"x": 3,
 			"y": 2,
-			"id": "(3, 0)",
+			"id": 13,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 4,
+			"y": 2,
+			"id": 14,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 5,
+			"y": 2,
+			"id": 15,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 6,
+			"y": 2,
+			"id": 16,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 7,
+			"y": 2,
+			"id": 17,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -122,7 +215,7 @@
 		{
 			"x": 0,
 			"y": 3,
-			"id": "(0, 0)",
+			"id": 18,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -130,7 +223,7 @@
 		{
 			"x": 1,
 			"y": 3,
-			"id": "(2, 0)",
+			"id": 19,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false
@@ -138,7 +231,303 @@
 		{
 			"x": 2,
 			"y": 3,
-			"id": "(1, 0)",
+			"id": 20,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 3,
+			"y": 3,
+			"id": 21,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 4,
+			"y": 3,
+			"id": 22,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 5,
+			"y": 3,
+			"id": 23,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 6,
+			"y": 3,
+			"id": 24,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 7,
+			"y": 3,
+			"id": 25,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 0,
+			"y": 4,
+			"id": 26,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 1,
+			"y": 4,
+			"id": 27,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 2,
+			"y": 4,
+			"id": 28,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 3,
+			"y": 4,
+			"id": 29,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 4,
+			"y": 4,
+			"id": 30,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 5,
+			"y": 4,
+			"id": 31,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 6,
+			"y": 4,
+			"id": 32,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 7,
+			"y": 4,
+			"id": 33,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 0,
+			"y": 5,
+			"id": 34,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 1,
+			"y": 5,
+			"id": 35,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 2,
+			"y": 5,
+			"id": 36,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 3,
+			"y": 5,
+			"id": 37,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 4,
+			"y": 5,
+			"id": 38,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 5,
+			"y": 5,
+			"id": 39,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 6,
+			"y": 5,
+			"id": 40,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 7,
+			"y": 5,
+			"id": 41,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 0,
+			"y": 6,
+			"id": 42,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 1,
+			"y": 6,
+			"id": 43,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 2,
+			"y": 6,
+			"id": 44,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 3,
+			"y": 6,
+			"id": 45,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 4,
+			"y": 6,
+			"id": 46,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 5,
+			"y": 6,
+			"id": 47,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 6,
+			"y": 6,
+			"id": 48,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 7,
+			"y": 6,
+			"id": 49,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 0,
+			"y": 7,
+			"id": 50,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 1,
+			"y": 7,
+			"id": 51,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 2,
+			"y": 7,
+			"id": 52,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 3,
+			"y": 7,
+			"id": 53,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 4,
+			"y": 7,
+			"id": 54,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 5,
+			"y": 7,
+			"id": 55,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 6,
+			"y": 7,
+			"id": 56,
+			"transposed": false,
+			"x_flipped": false,
+			"y_flipped": false
+		},
+		{
+			"x": 7,
+			"y": 7,
+			"id": 57,
 			"transposed": false,
 			"x_flipped": false,
 			"y_flipped": false

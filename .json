@@ -1,0 +1,51 @@
+{
+	"name": "",
+	"atlases": [
+		{
+			"id": 1,
+			"path": "[StreamTexture:1275]"
+		},
+		{
+			"id": 2,
+			"path": "[StreamTexture:1272]"
+		}
+	],
+	"tile_data": [
+		{
+			"id": 2,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": "(200, 200)",
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": "1,1,1,1",
+				"name": "dev-terrain-atlas.png 2",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": "(0, 0)",
+				"normal_map": "[Object:null]",
+				"occluder_offs": "(0, 0)",
+				"region": "(0, 0, 1600, 1600)",
+				"shapes": [
+
+				],
+				"texture": "[StreamTexture:1272]",
+				"texture_offs": "(0, 0)",
+				"tile_mode": 2,
+				"z_index": 0
+			}
+		}
+	]
+}

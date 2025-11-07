@@ -1,0 +1,3311 @@
+{
+	"name": "/terrain_tileset",
+	"tile_data": [
+		{
+			"id": 1,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					256,
+					256
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "patternPack_tilesheet.png 1",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					0,
+					0,
+					3072,
+					1792
+				],
+				"shapes": [
+
+				],
+				"texture": "res://patternPack_tilesheet.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 2,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 2,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 2",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					0,
+					0,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 3,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 3",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					200,
+					0,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 4,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 4",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					400,
+					0,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 5,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 5",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					600,
+					0,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 6,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 6",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					800,
+					0,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 7,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 7",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					0,
+					200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 8,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 8",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					200,
+					200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 9,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 9",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					400,
+					200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 10,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 10",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					0,
+					400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 11,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 11",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					200,
+					400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 12,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 12",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					400,
+					400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 13,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 13",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					600,
+					400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 14,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 14",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					800,
+					400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 15,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 15",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1000,
+					400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 16,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 16",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1200,
+					400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 17,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 17",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1400,
+					400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 18,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 18",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					0,
+					600,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 19,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 19",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					200,
+					600,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 20,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 20",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					400,
+					600,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 21,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 21",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					600,
+					600,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 22,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 22",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					800,
+					600,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 23,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 23",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1000,
+					600,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 24,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 24",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1200,
+					600,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 25,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 25",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1400,
+					600,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 26,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 26",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					0,
+					800,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 27,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 27",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					200,
+					800,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 28,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 28",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					400,
+					800,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 29,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 29",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					600,
+					800,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 30,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 30",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					800,
+					800,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 31,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 31",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1000,
+					800,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 32,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 32",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1200,
+					800,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 33,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 33",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1400,
+					800,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 34,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 34",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					0,
+					1000,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 35,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 35",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					200,
+					1000,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 36,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 36",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					400,
+					1000,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 37,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 37",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					600,
+					1000,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 38,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 38",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					800,
+					1000,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 39,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 39",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1000,
+					1000,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 40,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 40",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1200,
+					1000,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 41,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 41",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1400,
+					1000,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 42,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 42",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					0,
+					1200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 43,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 43",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					200,
+					1200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 44,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 44",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					400,
+					1200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 45,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 45",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					600,
+					1200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 46,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 46",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					800,
+					1200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 47,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 47",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1000,
+					1200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 48,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 48",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1200,
+					1200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 49,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 49",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1400,
+					1200,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 50,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 50",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					0,
+					1400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 51,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 51",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					200,
+					1400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 52,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 52",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					400,
+					1400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 53,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 53",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					600,
+					1400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 54,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 54",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					800,
+					1400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 55,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 55",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1000,
+					1400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 56,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 56",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1200,
+					1400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		},
+		{
+			"id": 57,
+			"coord": {
+				"x": 0,
+				"y": 0
+			},
+			"autotile": {
+				"bitmask": 0,
+				"bitmask_mode": 0,
+				"fallback_mode": 0,
+				"light_occluder": "[Object:null]",
+				"nav_polygon": "[Object:null]",
+				"size": [
+					64,
+					64
+				],
+				"spacing": 0,
+				"subtile_priority": 1,
+				"z_index": 0
+			},
+			"tile": {
+				"light_occluder": "[Object:null]",
+				"material": "[Object:null]",
+				"modulate": [
+					1,
+					1,
+					1,
+					1
+				],
+				"name": "dev-terrain-atlas.png 57",
+				"nav_polygon": "[Object:null]",
+				"nav_polygon_offs": [
+					0,
+					0
+				],
+				"normal_map": "[Object:null]",
+				"occluder_offs": [
+					0,
+					0
+				],
+				"region": [
+					1400,
+					1400,
+					200,
+					200
+				],
+				"shapes": [
+
+				],
+				"texture": "res://dev-terrain-atlas.png",
+				"texture_offs": [
+					0,
+					0
+				],
+				"tile_mode": 0,
+				"z_index": 0
+			}
+		}
+	]
+}
