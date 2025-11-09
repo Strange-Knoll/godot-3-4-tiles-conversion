@@ -3,31 +3,28 @@ this project contains a set of scripts which are tools for fixing the conversion
 
 ### Whats Inside?
 ```
-3x Nodes
-	- TileMapExporter.gd  # this class allows exporting of tile map data in your scene
-	- TileSetExporter.gd  # this class exports all tilesets in your project dir
+3x Addons
+	- tilemap_exporter.gd  # this addon exports TileMap data to JSON
+	- tilemap_exporter.gd  # this addon exports TileSet data to JSON
 
 4x Addons
-	- tilemap_converter  # this addon converts TileMaps 
-	- tileset_converter  # this addon converts TileSets
+	- tilemap_converter  # this addon converts TileMap JSON data into a TileMapLayer 
+	- tileset_converter  # this addon converts TileSet JSON data into a TileSet
 ```
 
-**Step 1 - Setup:** copy the 3x Nodes scripts into the Godot-3.x version of your project, and the 4x Addons into the res://addons folder of the converted Godot-4x version of your project. Create a new folder in the root of your 4.x project named "conversion_dump" ( res://conversion_dump )
+**Step 1 - Setup:** copy the 3x Addons into the Godot-3.x version of your projects res://addons folder, and the 4x Addons into the res://addons folder of the converted Godot-4x version of your project. Create a new folder in the root of your 4.x project named "conversion_dump" ( res://conversion_dump ), this folder is a backup of old TileSet resources after it has been converted
 
 **Step 2 - Exporting TileSets:** 
-1. In any scene that you can play, add a TileSetExporter node to the scene.
-2. Input the absolute path of where you want the TileSet data to be exported into the text field in the nodes Inspector.
-3. Play that scene.
-4. Once you have confirmed the export has occurred, the TileSetExporter node can be deleted from the scene 
-This will scan your project directory for .tres files that are of the TileSet type and export a number of JSON files to the specified outside directory. The JSON files will be named the same name as the TileSet resource. This process only needs to be done once
+1. Select a TileSet you want to export.
+2. Press the new Export TileSet button at the top of the Inspector Panel
+3. A file dialogue will appear, navigate to the location you with to save the exported JSON data, and press save
+- If you do not enter a file name into the dialog, the file will be named the same as the resource it is exported from ( MyTileSet.tres -> MyTileSet.json ). Otherwise the JSON file will have the name entered into the dialog
 
 **Step 3 - Exporting TileMaps:**
-1. In a scene that contains a TileMap, add a TileMapExporter node to that scene.
-2. Input the absolute path of where you want the TileMap data to be exported into the text field in the nodes Inspector.
-3. Play that scene
-4. Once you have confirmed the export has occurred, the TileMapExporter node can be deleted from the scene
-This will scan the tree the TileMapExporter node is placed in for nodes of type TileMap, and export their data to JSON files to the specified outside directory. The JSON files will be named with the same name at the TileMap node they copied. this process must be done for every scene that contains a tile map. 
-***Warning:** Nodes that have the same name, will override exported JSON files if they are exported to the same directory.* 
+1. Select a TileMap you want to export.
+2. Press the Export TileMap button at the top of the Inspector Panel
+3. A file dialogue will appear, navigate to the location you with to save the exported JSON data, and press save
+- If you do not enter a file name into the dialog, the file will be named the same as the node it is exported from ( MyTileMap.tres -> MyTileMap.json ). Otherwise the JSON file will have the name entered into the dialog
 
 **Step 4 - Importing TileSets:**
 1. Right click on a TileSet resource in the FileSystem. At the bottom of the right click menu you will see an option "Convert TileSet". Select it.
