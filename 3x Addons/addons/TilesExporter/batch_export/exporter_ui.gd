@@ -111,7 +111,7 @@ func _export(file_path:String):
 func write_data(path:String,file_name:String,dict:Dictionary, fallback:String, retry_attempt:bool = false):
 	var json = JSON.print(dict, "\t")
 	#print(file_name)
-	var file_path = path + file_name + ".json"
+	var file_path = path.plus_file( file_name + ".json")
 	var file = File.new()
 	var error = file.open(file_path, File.WRITE)
 	if error == OK:
