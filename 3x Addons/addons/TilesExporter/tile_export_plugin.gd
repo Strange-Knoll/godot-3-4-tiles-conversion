@@ -22,6 +22,7 @@ func _enter_tree():
 func start_batch_convert(_nothing_godot_is_silly): #Needed to make the tool menu work :/
 	var dialogue_base_node = batch_converter_dialogue.instance()
 	dialogue_base_node.set_script(batch_converter_dialogue_script)
+	dialogue_base_node.set_plugin(self)
 	
 	var base_control = get_editor_interface().get_base_control()
 	base_control.add_child(dialogue_base_node)

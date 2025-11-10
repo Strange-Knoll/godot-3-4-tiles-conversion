@@ -1,8 +1,10 @@
 tool
 extends WindowDialog
 
-onready var event_log = $"%EventLog"
-onready var convert_btn = $"%convert_button"
+onready var event_log:RichTextLabel = $"%EventLog"
+onready var export_in_place_btn:Button = $"%ExportInPlaceBtn"
+onready var export_to_dir_btn:Button = $"%ExportToDirBtn"
+onready var progress:ProgressBar = $"%ProgressBar"
 
 const TileMapExporter = preload("../tilemap/tilemap_exporter.gd")
 const TileSetExporter = preload("../tileset/tileset_exporter.gd")
@@ -12,11 +14,19 @@ var tilemaps:Dictionary = {}
 var tilesets:Dictionary = {} #Load will actually give use a shared ref, we want unique ones
 var retry_counter = 0
 
+var file_dialog:EditorFileDialog
+var _plugin:EditorPlugin
+
+func set_plugin(p:EditorPlugin):
+	if not _plugin: _plugin = p
+
 func _ready():
 	scan()
-	convert_btn.connect("pressed",self,"export_btn")
+	export_in_place_btn.connect("button_up",self,"_on_exp_in_place_btn")
+	export_to_dir_btn.connect("button_up", self, "_on_exp_to_dir_btn")
 
 func scan():
+	progress.visible = false
 	tilemaps = {}
 	tilesets = {}
 	event_log.text = "Scanning....\n"
@@ -35,10 +45,13 @@ func scan():
 		#exporter.output_path = scene
 	event_log.text += ("Found %d tilemaps\n" % tilemaps.size())
 	event_log.text += ("Found %d tilesets\n" % tilesets.size())
+	progress.max_value = tilemaps.size() + tilesets.size()
+	
 
-func export_btn():
+func _on_exp_in_place_btn():
 	var map_exporter:TileMapExporter = TileMapExporter.new()
 	var set_exporter:TileSetExporter = TileSetExporter.new()
+	if not progress.visible: progress.visible = true
 	for tilemap in tilemaps:
 		var path:String = tilemaps[tilemap]
 		var data = map_exporter.process_tilemap(tilemap)
@@ -50,6 +63,49 @@ func export_btn():
 		var data = set_exporter.process_tileset(tileset)
 		event_log.text += ("Exporting tileset %s\n" % path)
 		write_data(path.get_base_dir(),path.get_file(), data, "tileset")
+	pass
+
+func _on_exp_to_dir_btn(): 
+	var dialog = _get_file_dialogue()
+	dialog.popup_centered(Vector2(800,600))
+
+func _get_file_dialogue() -> EditorFileDialog:
+	#print("_get_file_dialogue()")
+	#print("self.file_dialog == ", file_dialog)
+	if not self.file_dialog:
+		file_dialog = EditorFileDialog.new()
+		file_dialog.name = "BatchTileExporterFileDialog"
+		file_dialog.window_title = "Save Batch Tile JSON Data"
+		file_dialog.access = EditorFileDialog.ACCESS_FILESYSTEM
+		file_dialog.display_mode = EditorFileDialog.DISPLAY_LIST
+		file_dialog.mode = EditorFileDialog.MODE_OPEN_DIR
+		file_dialog.show_on_top = true
+		file_dialog.dialog_hide_on_ok = true
+		file_dialog.connect("dir_selected", self, "_export")
+		#print("_plugin == ", _plugin)
+		var base = _plugin.get_editor_interface().get_base_control()
+		base.add_child(file_dialog)
+		base.move_child(file_dialog, 0)
+	#print("self.file_dialog == ", file_dialog)
+	return file_dialog
+
+func _export(file_path:String):
+	var map_exporter:TileMapExporter = TileMapExporter.new()
+	var set_exporter:TileSetExporter = TileSetExporter.new()
+	if not progress.visible: progress.visible = true
+	var map_path = create_dir(file_path, "TileMaps")
+	var set_path = create_dir(file_path, "TileSets")
+	for tilemap in tilemaps:
+		var path:String = tilemaps[tilemap]
+		var data = map_exporter.process_tilemap(tilemap)
+		event_log.text += ("Exporting tilemap %s\n" % path)
+		write_data(map_path, tilemap.name, data, "tilemap")
+	
+	for tileset in tilesets:
+		var path:String = tilesets[tileset]
+		var data = set_exporter.process_tileset(tileset)
+		event_log.text += ("Exporting tileset %s\n" % path)
+		write_data(set_path, path.get_file(), data, "tileset")
 	pass
 
 func write_data(path:String,file_name:String,dict:Dictionary, fallback:String, retry_attempt:bool = false):
@@ -70,7 +126,15 @@ func write_data(path:String,file_name:String,dict:Dictionary, fallback:String, r
 			write_data(path,fallback+"_"+str(retry_counter),dict,fallback,true)
 		else:
 			event_log.text += "Retry attempt failed\n"
-	pass
+	progress.value+=1
+
+# creates a new dir inside path named dir_name and returns new full path -> path/to/dir/dir_name
+func create_dir(path:String, dir_name:String) -> String:
+	var full_path = path+"/"+dir_name
+	var dir:Directory = Directory.new()
+	if not dir.dir_exists(full_path):
+		dir.make_dir(full_path)
+	return full_path+"/"
 
 func _exit_tree():
 	for tilemap in tilemaps:
