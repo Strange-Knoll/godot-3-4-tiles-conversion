@@ -2,9 +2,9 @@
 extends EditorPlugin
 
 
-const TileMapImporterScript:Script = preload("tilemap_importer.gd")
+const TileMapImporterScript:Script = preload("tilemap/tilemap_importer.gd")
 var tilemap_importer_menu:EditorContextMenuPlugin
-const TilesetImporterScript:Script = preload("tileset_importer.gd")
+const TilesetImporterScript:Script = preload("tileset/tileset_importer.gd")
 var tileset_importer_menu:EditorContextMenuPlugin
 
 func _enter_tree() -> void: pass

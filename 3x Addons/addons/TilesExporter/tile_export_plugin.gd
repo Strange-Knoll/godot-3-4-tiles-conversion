@@ -3,8 +3,8 @@ extends EditorPlugin
 
 const TileSetExporterInspectorPlugin = preload("tileset/tileset_inspector.gd")
 const TileMapExporterInspectorPlugin = preload("tilemap/tilemap_inspector.gd")
-const batch_converter_dialogue = preload("batch_convert/exporter_ui.tscn")
-const batch_converter_dialogue_script = preload("batch_convert/exporter_ui.gd")
+const batch_converter_dialogue = preload("batch_export/exporter_ui.tscn")
+const batch_converter_dialogue_script = preload("batch_export/exporter_ui.gd")
 
 const TOOL_MENU_LABEL = "TileMap/TileSet Batch Convert"
 
