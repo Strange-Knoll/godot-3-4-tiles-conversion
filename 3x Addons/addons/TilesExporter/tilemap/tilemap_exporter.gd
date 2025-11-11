@@ -39,6 +39,7 @@ func _collect_tilemaps(start:Node):
 			_collect_tilemaps(child)
 
 func process_tilemap(tilemap:TileMap) -> Dictionary:
+	tilemap.fix_invalid_tiles()
 	var tileset:TileSet = tilemap.tile_set
 
 	var dict:Dictionary = {
