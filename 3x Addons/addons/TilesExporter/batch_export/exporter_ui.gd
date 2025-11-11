@@ -27,6 +27,7 @@ func set_plugin(p:EditorPlugin):
 	if not _plugin: _plugin = p
 
 func _ready():
+	_existing_ids = []
 	scan()
 	print("TileMaps Dict: ", tilemaps)
 	print("TileSets Dict: ", tilesets)
@@ -34,6 +35,7 @@ func _ready():
 	export_to_dir_btn.connect("button_up", self, "_on_exp_to_dir_btn")
 
 func scan():
+	_existing_ids = []
 	progress.visible = false
 	tilemaps = {}
 	tilesets = {}
@@ -52,9 +54,7 @@ func scan():
 				tilesets[tilemap.tile_set] = tilemap.tile_set.resource_path
 			
 			var node_path:String = String(tile_maps_dict[tilemap])
-			node_path = node_path.lstrip("./").percent_encode()
-			var scene_path = scene.percent_encode()
-			tilemaps[tilemap] = {scene_path:node_path}
+			tilemaps[tilemap] = {scene:node_path}
 			
 		#exporter.output_path = scene
 	event_log.text += ("Found %d tilemaps\n" % tilemaps.size())
@@ -106,6 +106,7 @@ func _get_file_dialogue() -> EditorFileDialog:
 
 #export to dir
 func _export(file_path:String):
+	_existing_ids = []
 	var map_exporter:TileMapExporter = TileMapExporter.new()
 	var set_exporter:TileSetExporter = TileSetExporter.new()
 	if not progress.visible: progress.visible = true
