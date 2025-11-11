@@ -42,6 +42,7 @@ func scan():
 	var discovered_tilesets:Dictionary
 	
 	for scene in scenes:
+		scene = scene as String
 		#Dictionary: {TileMap:NodePath}
 		var tile_maps_dict:Dictionary = search_tscn_file(scene)
 		for tilemap in tile_maps_dict.keys():
@@ -52,7 +53,8 @@ func scan():
 			
 			var node_path:String = String(tile_maps_dict[tilemap])
 			node_path = node_path.lstrip("./").percent_encode()
-			tilemaps[tilemap] = {scene:node_path}
+			var scene_path = scene.percent_encode()
+			tilemaps[tilemap] = {scene_path:node_path}
 			
 		#exporter.output_path = scene
 	event_log.text += ("Found %d tilemaps\n" % tilemaps.size())
@@ -110,20 +112,22 @@ func _export(file_path:String):
 	var map_path = create_dir(file_path, "TileMaps")
 	var set_path = create_dir(file_path, "TileSets")
 	for tilemap in tilemaps:
-		var file_name:String = tilemaps[tilemap].values()[0]
+		var file_name:String = tilemaps[tilemap].keys()[0]
+		file_name += tilemaps[tilemap].values()[0]
 		print(file_name)
 		print(tilemap)
 		var data = map_exporter.process_tilemap(tilemap)
 		data["resource_path"] = tilemaps[tilemap].keys()[0]
 		
 		event_log.text += ("Exporting tilemap %s\n" % file_name)
-		write_data(map_path, file_name, data, "tilemap")
+		write_data(map_path, generate_unique_name(16), data, "tilemap")
 	
 	for tileset in tilesets:
 		var path:String = tilesets[tileset]
 		var data = set_exporter.process_tileset(tileset)
 		event_log.text += ("Exporting tileset %s\n" % path.replace("/", "%"))
-		write_data(set_path, path.get_slice("res://", 1).percent_encode(), data, "tileset")
+		write_data(set_path, generate_unique_name(16), data, "tileset")
+		#write_data(set_path, path.get_slice("res://", 1).percent_encode(), data, "tileset")
 	pass
 
 func write_data(path:String,file_name:String,dict:Dictionary, fallback:String, retry_attempt:bool = false):
@@ -219,3 +223,13 @@ func _find_scene_root(start:Node) -> Node:
 	while test.owner != null:
 		test = test.get_parent()
 	return test
+
+var _existing_ids:Array = []
+const _chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz"
+func generate_unique_name(count:int) -> String:
+	var out:String = ""
+	for c in count:
+		out += _chars[randi()%_chars.length()-1]
+	if _existing_ids.has(out):
+		return generate_unique_name(count)
+	return out
