@@ -1,6 +1,11 @@
 tool
 extends WindowDialog
 
+##### TODO #####
+# - replace dict nonsense with classes (yeah, multi class files are a thing apparently)
+# - add option for mono file export
+# - thread export process
+
 onready var event_log:RichTextLabel = $"%EventLog"
 onready var export_in_place_btn:Button = $"%ExportInPlaceBtn"
 onready var export_to_dir_btn:Button = $"%ExportToDirBtn"

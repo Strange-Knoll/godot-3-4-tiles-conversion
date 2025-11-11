@@ -59,6 +59,9 @@ func _get_file_dialogue() -> EditorFileDialog:
 func _export(path:String):
 	#print("_export( ", path, " )")
 	var data = exporter.process_tilemap(_selected_tilemap)
+	
+	## TODO: add resource path to data ... somehow
+	
 	var json = JSON.print(data, "\t")
 	
 	#print("path.get_file() == ", path.get_file())
