@@ -2,91 +2,48 @@ tool
 extends EditorInspectorPlugin
 
 const TileSetExp = preload("tileset_exporter.gd")
-
-var _plugin:EditorPlugin
-var _selected_tileset:TileSet
-var file_dialog:EditorFileDialog
 var exporter:TileSetExp
 
+var _plugin:EditorPlugin
+var _file_dialog:EditorFileDialog
+
 func set_plugin(p:EditorPlugin) -> void:
-	#print("set_plugin( ", p, " )")
 	if not _plugin: _plugin = p
-	#print("_plugin == ", _plugin)
-	if not exporter: 
-		exporter = TileSetExp.new()
-	#print("exporter == ", exporter)
-	
-	
+	if not exporter: exporter = TileSetExp.new()
+
 func can_handle(object) -> bool:
 	return object is TileSet
 
 func parse_begin(object):
-	_selected_tileset = object
+	object = object as TileSet
 	var btn = Button.new()
 	btn.name = "TileSetExportButton"
 	btn.text = "Export TileSet"
 	btn.align = Button.ALIGN_CENTER
-	btn.connect("button_up", self, "_export_btn_pressed")
+	btn.connect("button_up", self, "_export_btn_pressed", [object])
 	add_custom_control(btn)
 
-func _export_btn_pressed():
-	print("_export_btn_pressed()")
+func _export_btn_pressed(ref:TileSet):
 	var popup:EditorFileDialog = _get_file_dialogue()
+	popup.current_file = ref.resource_path.get_file().get_slice(".tres",0)
+	if not popup.is_connected("file_selected", exporter, "export_tileset"):
+		popup.connect("file_selected", exporter, "export_tileset", [ref])
 	popup.popup_centered(Vector2(800,600))
 
 func _get_file_dialogue() -> EditorFileDialog:
-	#print("_get_file_dialogue()")
-	#print("self.file_dialog == ", file_dialog)
-	if not self.file_dialog:
-		file_dialog = EditorFileDialog.new()
-		file_dialog.name = "TileSetExporterFileDialog"
-		file_dialog.window_title = "Save TileSet JSON Data"
-		file_dialog.access = EditorFileDialog.ACCESS_FILESYSTEM
-		file_dialog.display_mode = EditorFileDialog.DISPLAY_LIST
-		file_dialog.mode = EditorFileDialog.MODE_SAVE_FILE
-		file_dialog.show_on_top = true
-		file_dialog.dialog_hide_on_ok = true
-		file_dialog.add_filter("*.json; JSON")
-		file_dialog.connect("file_selected", self, "_export")
-		#print("_plugin == ", _plugin)
+	if not self._file_dialog:
+		_file_dialog = EditorFileDialog.new()
+		_file_dialog.name = "TileSetExporterFileDialog"
+		_file_dialog.window_title = "Save TileSet JSON Data"
+		_file_dialog.access = EditorFileDialog.ACCESS_FILESYSTEM
+		_file_dialog.display_mode = EditorFileDialog.DISPLAY_LIST
+		_file_dialog.mode = EditorFileDialog.MODE_SAVE_FILE
+		_file_dialog.show_on_top = true
+		_file_dialog.dialog_hide_on_ok = true
+		_file_dialog.disable_overwrite_warning = false
+		_file_dialog.add_filter("*.json; JSON")
 		var base = _plugin.get_editor_interface().get_base_control()
-		base.add_child(file_dialog)
-		base.move_child(file_dialog, 0)
-	#print("self.file_dialog == ", file_dialog)
-	return file_dialog
-
-func _export(path:String):
-	#print("_export( ", path, " )")
-	var data = exporter.process_tileset(_selected_tileset)
-	var json = JSON.print(data, "\t")
-	
-	#print("path.get_file() == ", path.get_file())
-	var file_name_no_ext = path.get_file().get_slice(".json", 0)
-	#print("file_name_no_ext == ", file_name_no_ext)
-	
-	var res_path_penc = _selected_tileset.resource_path.replace("/", "%")
-	
-	var file = File.new()
-	var file_path:String
-	var error
-	## determine of the user entered a name or not
-	if file_name_no_ext == "":
-		## if no, build the path with the resource name
-		var constructed_path = path.get_slice(".json",0) 
-		constructed_path += _selected_tileset.resource_path.get_slice("res://", 1).replace("/", "%")
-		constructed_path += ".json"
-		#print("constructed_path == ", constructed_path)
-		file_path = constructed_path
-	else: 
-		# if yes, just save that
-		file_path = path
-	
-	error = file.open(file_path, File.WRITE)
-	if error == OK:
-		file.store_string(json)
-		file.close()
-		print("File saved to:", file_path)
-	else:
-		push_error("Could not open file for writing!")
-
+		base.add_child(_file_dialog)
+		base.move_child(_file_dialog, 0)
+	return _file_dialog
 
