@@ -6,9 +6,9 @@ extends WindowDialog
 # - thread export process
 
 onready var event_log:RichTextLabel = $"%EventLog"
-onready var export_in_place_btn:Button = $"%ExportInPlaceBtn"
-onready var export_to_dir_btn:Button = $"%ExportToDirBtn"
 onready var progress:ProgressBar = $"%ProgressBar"
+var export_in_place_btn:Button
+var export_to_dir_btn:Button
 
 const BatchExporter = preload("batch_exporter.gd")
 var exporter
@@ -28,10 +28,14 @@ func set_plugin(p:EditorPlugin):
 	if not _plugin: _plugin = p
 
 func _ready():
+	
 	exporter = BatchExporter.new()
 	exporter.connect("post_log", self, "_update_log")
 	exporter.connect("post_progress", self, "_update_progress_bar")
 	exporter.connect("post_scan_count", self, "_set_progress_max")
+	
+	export_in_place_btn = $"%ExportInPlaceBtn"
+	export_to_dir_btn  = $"%ExportToDirBtn"
 	
 	scan_thread = Thread.new()
 	scan_mutex = Mutex.new()
@@ -44,6 +48,7 @@ func _thread_scan(exporter: BatchExporter):
 	scan_mutex.lock()
 	scan_results = exporter.scan()
 	scan_results = scan_results as BatchExporter.ScanResult
+	
 	export_in_place_btn.connect("button_up",self,"_on_exp_in_place_btn", [scan_results])
 	export_to_dir_btn.connect("button_up", self, "_on_exp_to_dir_btn", [scan_results])
 	scan_mutex.unlock()
