@@ -17,12 +17,11 @@ var exporter
 var file_dialog:EditorFileDialog
 var _plugin:EditorPlugin
 
-var scan_thread:Thread
-var scan_mutex:Mutex
-var scan_results
+#var thread:Thread
+#var mutex:Mutex
+#var scan_results
 
-var export_thread:Thread
-var export_mutex:Mutex
+signal _ready_complete
 
 func set_plugin(p:EditorPlugin):
 	if not _plugin: _plugin = p
@@ -36,22 +35,22 @@ func _ready():
 	
 	export_in_place_btn = $"%ExportInPlaceBtn"
 	export_to_dir_btn  = $"%ExportToDirBtn"
+	connect("_ready_complete", self, "_on_ready_complete")
+	emit_signal("_ready_complete")
+#	thread = Thread.new()
+#	mutex = Mutex.new()
+#	thread.start(self, "_thread_scan", exporter)
+#	scan_results = thread.wait_to_finish()
 	
-	scan_thread = Thread.new()
-	scan_mutex = Mutex.new()
-	export_thread = Thread.new()
-	export_mutex = Mutex.new()
-	scan_thread.start(self, "_thread_scan", exporter)
-
-
-func _thread_scan(exporter: BatchExporter):
-	scan_mutex.lock()
-	scan_results = exporter.scan()
-	scan_results = scan_results as BatchExporter.ScanResult
-	
+func _on_ready_complete() -> void:
+	var scan_results = exporter.scan() as BatchExporter.ScanResult
 	export_in_place_btn.connect("button_up",self,"_on_exp_in_place_btn", [scan_results])
 	export_to_dir_btn.connect("button_up", self, "_on_exp_to_dir_btn", [scan_results])
-	scan_mutex.unlock()
+
+#func _thread_scan(exporter: BatchExporter) -> BatchExporter.ScanResult:
+#	mutex.lock()
+#	return exporter.scan() as BatchExporter.ScanResult
+#	mutex.unlock()
 
 func _on_exp_to_dir_btn(ref: BatchExporter.ScanResult): 
 	var dialog = _get_file_dialogue()
@@ -61,16 +60,26 @@ func _on_exp_to_dir_btn(ref: BatchExporter.ScanResult):
 
 func _on_exp_in_place_btn(ref: BatchExporter.ScanResult):
 	_show_progress_bar()
-	export_thread.start(self, "_in_place_thread", ref)
-
-func _in_place_thread(ref: BatchExporter.ScanResult):
 	exporter.export_in_place(ref)
+	#thread.start(self, "_in_place_thread", [ref])
+	
+
+#func _in_place_thread(data:Array):
+#	mutex.lock()
+#	exporter.export_in_place(data[0])
+#	mutex.unlock()
+#	thread.wait_to_finish()
 
 func _on_exp_dir_selected(path:String, ref: BatchExporter.ScanResult):
-	export_thread.start(self, "_export_dir_thread", [path, ref])
+	exporter.export_to_dir(path, ref)
+#	thread.start(self, "_export_dir_thread", [path, ref])
+#	thread.wait_to_finish()
+	pass
 
-func _export_dir_thread(data:Array):
-	exporter.export_to_dir(data[0], data[1])
+#func _export_dir_thread(data:Array):
+#	mutex.lock()
+#	exporter.export_to_dir(data[0], data[1])
+#	mutex.unlock()
 	
 
 
@@ -108,5 +117,5 @@ func _set_progress_max(val:int):
 	progress.max_value = val
 
 func _exit_tree():
-	scan_thread.wait_to_finish()
-	export_thread.wait_to_finish()
+	#thread.wait_to_finish()
+	pass
