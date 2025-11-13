@@ -39,15 +39,33 @@ func _on_file_selected(file_path:String):
 	print("_on_file_selected")
 	var data = load_data_from_file(file_path)
 	var layer = create_layer_from_data(selected_tilemap, data)
-	layer.name = selected_tilemap.name
-	var parent = selected_tilemap.get_parent()
-	var index = selected_tilemap.get_index()
-	parent.remove_child(selected_tilemap)
-	selected_tilemap.queue_free()
-	parent.add_child(layer)
-	if parent.owner == null: layer.owner = parent
-	else: layer.owner = parent.owner
-	parent.move_child(layer, index)
+	replace_tilemap(selected_tilemap, layer)
+
+func replace_tilemap(old:TileMap, new:TileMapLayer):
+	new.name = old.name
+	var parent = old.get_parent()
+	var index = old.get_index()
+	parent.remove_child(old)
+	old.queue_free()
+	parent.add_child(new)
+	if parent.owner == null: new.owner = parent
+	else: new.owner = parent.owner
+	parent.move_child(new, index)
+
+func overwrite_save(old_scene_path:String, new_scene:PackedScene):
+	ResourceSaver.save(new_scene, old_scene_path)
+
+func backup_and_save(old_scene_path:String, new_scene:PackedScene):
+	var swap_path = old_scene_path
+	var swap_name = swap_path.get_file()
+	var old = load(swap_path)
+	var rid = old.get_rid()
+	print("old rid: ", rid)
+	var backup_dir = _create_dir("res://", "converted_scenes_backup")
+	old.take_over_path(backup_dir+swap_name)
+	ResourceSaver.save(old)
+	ResourceSaver.save(new_scene, swap_path)
+	ResourceSaver.set_uid(swap_path, rid.get_id())
 
 func load_data_from_file(file_path:String) -> Dictionary:
 	print("load_data_from_file")
@@ -91,3 +109,10 @@ func create_layer_from_data(node:TileMap, data:Dictionary) -> TileMapLayer:
 		#out._tile_data_runtime_update(coord, tile_data)
 	
 	return out
+
+func _create_dir(path:String, dir_name:String) -> String:
+	var full_path = path+"/"+dir_name
+	var dir := DirAccess.open(path)
+	if not dir.dir_exists(full_path):
+		dir.make_dir(full_path)
+	return full_path+"/"

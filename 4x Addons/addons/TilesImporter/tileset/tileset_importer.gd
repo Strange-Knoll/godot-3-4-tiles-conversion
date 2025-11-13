@@ -16,6 +16,21 @@ func create_file_dialogue() -> void:
 	file_dialogue = dialogue
 	EditorInterface.get_base_control().add_child(file_dialogue)
 
+func overwrite_save(old_tileset_path:String, new_tileset:TileSet):
+	ResourceSaver.save(new_tileset, old_tileset_path)
+
+func backup_and_save(old_tileset_path:String, new_tileset:TileSet):
+	var swap_path = old_tileset_path
+	var swap_name = swap_path.get_file()
+	var old = load(swap_path)
+	var rid = old.get_rid()
+	print("old rid: ", rid)
+	var backup_dir = _create_dir("res://", "converted_tileset_backup")
+	old.take_over_path(backup_dir+swap_name)
+	ResourceSaver.save(old)
+	ResourceSaver.save(new_tileset, swap_path)
+	ResourceSaver.set_uid(swap_path, rid.get_id())
+
 func _popup_menu(resource_paths: PackedStringArray) -> void:
 	var res = load(resource_paths[0])
 	if not res is TileSet: return
@@ -31,38 +46,27 @@ func _on_click(_res_path:PackedStringArray):
 func _on_file_selected(path:String):
 	var data:Dictionary = load_data_from_file(path)
 	var tileset:TileSet = create_tileset_from_data(data)
-	var swap_path = selected_tileset.resource_path
-	var swap_name = swap_path.get_file()
-	var old = load(swap_path)
-	var rid = old.get_rid()
-	print("old rid: ", rid)
-	old.take_over_path("res://conversion_dump/"+swap_name)
-	#var err = ResourceSaver.save(old, "res://conversion_dump/"+swap_name)
-	#printerr("move old: ", err)
-	
-	#_move_old_res_to_dump(swap_path)
-	ResourceSaver.save(tileset, swap_path)
-	ResourceSaver.set_uid(swap_path, rid.get_id())
+	backup_and_save(selected_tileset.resource_path, tileset)
 
-func _move_old_res_to_dump(old:String):
-	print("_move_old_res_to_dump( ", old, " )")
-	var old_path = old
-	# Open a DirAccess at the project root
-	var dir := DirAccess.open("res://")
-	# Ensure destination folder exists
-	var target_folder = "res://conversion_dump/"
-	if not dir.dir_exists(target_folder):
-		print("creating dump folder")
-		var err = dir.make_dir("conversion_dump")
-		if err != OK:
-			push_error("Failed to create folder: " + str(err))
-			return
-	# Move the file
-	var new_path = target_folder + old_path.get_file()
-	print("file dumped to: ", new_path)
-	var err = dir.rename(old_path, new_path)
-	if err == OK: print("Moved successfully!")
-	else: push_error("Failed to move: " + str(err))
+#func _move_old_res_to_dump(old:String):
+	#print("_move_old_res_to_dump( ", old, " )")
+	#var old_path = old
+	## Open a DirAccess at the project root
+	#var dir := DirAccess.open("res://")
+	## Ensure destination folder exists
+	#var target_folder = "res://conversion_dump/"
+	#if not dir.dir_exists(target_folder):
+		#print("creating dump folder")
+		#var err = dir.make_dir("conversion_dump")
+		#if err != OK:
+			#push_error("Failed to create folder: " + str(err))
+			#return
+	## Move the file
+	#var new_path = target_folder + old_path.get_file()
+	#print("file dumped to: ", new_path)
+	#var err = dir.rename(old_path, new_path)
+	#if err == OK: print("Moved successfully!")
+	#else: push_error("Failed to move: " + str(err))
 
 func load_data_from_file(file_path:String) -> Dictionary:
 	#print("load_data_from_file")
@@ -167,3 +171,9 @@ func _create_collisions(tile_data:TileData, shape:Dictionary, indx:int, ):
 	tile_data.set_collision_polygon_one_way(0, indx, shape["one_way"])
 	tile_data.set_collision_polygon_one_way_margin(0, indx, shape["one_way_margin"])
 				
+func _create_dir(path:String, dir_name:String) -> String:
+	var full_path = path+"/"+dir_name
+	var dir := DirAccess.open(path)
+	if not dir.dir_exists(full_path):
+		dir.make_dir(full_path)
+	return full_path+"/"
