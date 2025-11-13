@@ -60,6 +60,13 @@ func export_to_dir(file_path:String, scan_data:ScanResult):
 	var set_exporter:TileSetExporter = TileSetExporter.new()
 	var map_path = _create_dir(file_path, "TileMaps")
 	var set_path = _create_dir(file_path, "TileSets")
+	var index = {
+		"header":"sk:gd3-4_tm/ts_ind",
+		"tilemap_dir":map_path,
+		"tileset_dir":set_path,
+		"tilemaps":{}, 
+		"tilesets":{}
+	}
 	for tilemap in scan_data.tilemaps:
 		tilemap = tilemap as TileMap
 		var res_path:String = scan_data.tilemaps[tilemap][0]
@@ -68,13 +75,18 @@ func export_to_dir(file_path:String, scan_data:ScanResult):
 		data["scene_resource_path"] = res_path
 		data["node_path"] = node_path
 		emit_signal("post_log",("Exporting tilemap %s\n" % tilemap.name))
-		_write_data(map_path, _generate_unique_name(16), data, "tilemap")
+		var unique_name = _generate_unique_name(16)
+		index["tilemaps"][unique_name] = {"res_path": res_path, "node_path": node_path}
+		_write_data(map_path, unique_name, data, "tilemap")
 	
 	for tileset in scan_data.tilesets:
 		var path:String = scan_data.tilesets[tileset]
 		var data = set_exporter.process_tileset(tileset)
 		emit_signal("post_log", ("Exporting tileset %s\n" % path.replace("/", "%")))
-		_write_data(set_path, _generate_unique_name(16), data, "tileset")
+		var unique_name = _generate_unique_name(16)
+		index["tilesets"][unique_name] = path
+		_write_data(set_path, unique_name, data, "tileset")
+	_write_data(file_path, "index", index, "export_index")
 	scan_data.cleanup()
 
 var _retry_counter:int = 0

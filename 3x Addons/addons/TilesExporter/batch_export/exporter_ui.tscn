@@ -3,7 +3,6 @@
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="BatchConversionDialogue" type="WindowDialog"]
-visible = true
 margin_right = 800.0
 margin_bottom = 500.0
 rect_min_size = Vector2( 500, 500 )
