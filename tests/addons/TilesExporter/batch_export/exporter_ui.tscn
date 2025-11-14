@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="BatchConversionDialogue" type="WindowDialog"]
+margin_right = 800.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 500, 500 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+popup_exclusive = true
+window_title = "Batch Tile Exporter"
+resizable = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 800.0
+margin_bottom = 442.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 784.0
+margin_bottom = 442.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 761.0
+margin_bottom = 419.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EventLog" type="RichTextLabel" parent="VBoxContainer/MarginContainer/PanelContainer/ScrollContainer"]
+unique_name_in_owner = true
+margin_right = 754.0
+margin_bottom = 412.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Scanning..."
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 446.0
+margin_right = 800.0
+margin_bottom = 460.0
+custom_constants/margin_right = 16
+custom_constants/margin_left = 16
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/MarginContainer3"]
+unique_name_in_owner = true
+margin_left = 16.0
+margin_right = 784.0
+margin_bottom = 14.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 464.0
+margin_right = 800.0
+margin_bottom = 500.0
+custom_constants/margin_top = 8
+custom_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2"]
+margin_top = 8.0
+margin_right = 800.0
+margin_bottom = 28.0
+alignment = 1
+
+[node name="ExportInPlaceBtn" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 213.0
+margin_right = 319.0
+margin_bottom = 20.0
+size_flags_horizontal = 4
+text = "Export in Place"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_left = 323.0
+margin_right = 451.0
+margin_bottom = 20.0
+custom_constants/separation = 128
+custom_styles/separator = SubResource( 1 )
+
+[node name="ExportToDirBtn" type="Button" parent="VBoxContainer/MarginContainer2/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 455.0
+margin_right = 587.0
+margin_bottom = 20.0
+size_flags_horizontal = 4
+text = "Export to Directory"
