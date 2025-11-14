@@ -99,17 +99,30 @@ func create_layer_from_data(node:TileMap, data:Dictionary) -> TileMapLayer:
 	
 	for cell in data["cells"]:
 		var coord = Vector2i(cell["x"], cell["y"])
+		var atlas_size = cell["atlas_size"]
+		if coord.x > atlas_size[0] or coord.y > atlas_size[1]:
+			continue
 		var atlas_coord = Vector2i(cell["atlas_coord"][0], cell["atlas_coord"][1])
 		# the source_id is super wrong
 		var source:int
 		for indx in tileset.get_source_count():
 			if tileset.get_source(indx).texture.resource_path == cell["atlas"]:
 				source = indx
-		out.set_cell(coord, tileset.get_source_id(source), atlas_coord)
-		var tile_data:TileData = out.get_cell_tile_data(coord)
-		tile_data.flip_h = cell["x_flipped"]
-		tile_data.flip_v = cell["y_flipped"]
-		tile_data.transpose = cell["transposed"]
+		var transposed = cell["transposed"]
+		var x_flipped = cell["x_flipped"]
+		var y_flipped = cell["y_flipped"]
+		
+		
+		var alternate_id:int = 0 #Godot 3 didn't support this, but 4 does.
+		alternate_id |= TileSetAtlasSource.TRANSFORM_FLIP_H if x_flipped else 0
+		alternate_id |= TileSetAtlasSource.TRANSFORM_FLIP_V if y_flipped else 0
+		alternate_id |= TileSetAtlasSource.TRANSFORM_TRANSPOSE if transposed else 0
+		out.set_cell(coord, tileset.get_source_id(source), atlas_coord, alternate_id)
+		#var tile_data:TileData = out.get_cell_tile_data(coord)
+		##tile_data.set_allow_tranform
+		#tile_data.flip_h = cell["x_flipped"]
+		#tile_data.flip_v = cell["y_flipped"]
+		#tile_data.transpose = cell["transposed"]
 		#out._tile_data_runtime_update(coord, tile_data)
 	
 	return out
