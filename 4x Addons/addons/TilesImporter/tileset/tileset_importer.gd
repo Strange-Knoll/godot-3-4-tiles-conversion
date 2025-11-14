@@ -118,7 +118,17 @@ func create_tileset_from_data(data:Dictionary) -> TileSet:
 			out.tile_size = size
 
 		for tile in groups[path]:
+			var pos_check = Vector2i(
+				# 64 / 32 = 2
+				tile["coord"]["x"] + tile["tile"]["region"][2], 
+				tile["coord"]["y"] + tile["tile"]["region"][3]
+			)
+			var size = source.texture.get_size()
+			if pos_check.x > size.x or pos_check.y > size.y:
+				continue
+			
 			var pos = Vector2i(
+				# 64 / 32 = 2
 				tile["coord"]["x"] / tile["tile"]["region"][2], 
 				tile["coord"]["y"] / tile["tile"]["region"][3]
 			)

@@ -1,5 +1,8 @@
 extends Reference
 
+
+# TODO: ignore export of tile outside of texture
+# TODO: fix alternative id thing
 func process_tilemap(tilemap:TileMap) -> Dictionary:
 	print("inside process func for ", tilemap.name)
 	tilemap.fix_invalid_tiles()
@@ -62,7 +65,8 @@ func process_tilemap(tilemap:TileMap) -> Dictionary:
 				tileset.tile_get_region(id).position.x/tilemap.cell_size.x, ### i think this is the crash
 				tileset.tile_get_region(id).position.y/tilemap.cell_size.y
 			)
-			var res_path = tileset.tile_get_texture(id).resource_path
+			var atlas_tex = tileset.tile_get_texture(id)
+			var res_path = atlas_tex.resource_path
 			if res_path == null:
 				print("res_path null at: ", used_cells[indx].x, used_cells[indx].y)
 			dict["cells"].append({
@@ -70,6 +74,7 @@ func process_tilemap(tilemap:TileMap) -> Dictionary:
 				"y":used_cells[indx].y,
 				"id":id,
 				"atlas": res_path,
+				"atlas_size":[atlas_tex.get_width(), atlas_tex.get_height()],
 				"atlas_coord": [atlas_coord.x, atlas_coord.y],
 				"transposed":transposed,
 				"x_flipped":x_flipped,
