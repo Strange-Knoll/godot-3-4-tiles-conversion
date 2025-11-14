@@ -56,7 +56,9 @@ func _replace_tilemaps(index:Dictionary) -> void:
 			var data = load_json(index["tilemap_dir"]+"/"+map_indx[0]+".json")
 			var node_path = map_indx[1]
 			post_log.emit("converting TileMap ("+node_path+") at: "+scene_path+"\n")
-			var old_tilemap:TileMap = scene.get_node(NodePath(node_path))
+			var old_tilemap = scene.get_node(NodePath(node_path))
+			if old_tilemap is TileMapLayer: 
+				continue
 			var new_layer = map_importer.create_layer_from_data(old_tilemap, data)
 			if new_layer != null:
 				map_importer.replace_tilemap(old_tilemap, new_layer)
