@@ -1,45 +1,5 @@
 @tool
-extends EditorContextMenuPlugin
-
-var file_dialogue:EditorFileDialog
-var selected_tilemap:TileMap
-
-
-func create_file_dialogue() -> void:
-	print("create_file_dialogue")
-	var dialogue:EditorFileDialog = EditorFileDialog.new()
-	dialogue.name = "TileMapConverterFileDialogue"
-	dialogue.access = EditorFileDialog.ACCESS_FILESYSTEM
-	dialogue.file_mode = EditorFileDialog.FILE_MODE_OPEN_FILE
-	dialogue.filters = ["*.json"]
-	dialogue.title = "Select TileMap Conversion Data"
-	dialogue.file_selected.connect(_on_file_selected)
-	file_dialogue = dialogue
-	EditorInterface.get_base_control().add_child(file_dialogue)
-		
-
-func _popup_menu(node_paths: PackedStringArray) -> void:
-	print("_popup_menu")
-	var scene_root = EditorInterface.get_edited_scene_root() 
-	var node = scene_root.get_node_or_null(node_paths[0])
-	if node == null or node is not TileMap: return
-	selected_tilemap = node
-	add_context_menu_item("Convert TileMap", open_conversion_data_file)
-	print(node_paths)
-	
-func open_conversion_data_file(node_paths: PackedStringArray):
-	print("open_conversion_data_file")
-	var dialogue = EditorInterface.get_base_control().get_node_or_null("TileMapConverterFileDialogue")
-	if dialogue == null:
-		print("dialogue == null")
-		create_file_dialogue()
-	file_dialogue.popup_file_dialog()
-
-func _on_file_selected(file_path:String):
-	print("_on_file_selected")
-	var data = load_data_from_file(file_path)
-	var layer = create_layer_from_data(selected_tilemap, data)
-	replace_tilemap(selected_tilemap, layer)
+extends RefCounted
 
 func replace_tilemap(old:TileMap, new:TileMapLayer):
 	new.name = old.name
@@ -112,18 +72,11 @@ func create_layer_from_data(node:TileMap, data:Dictionary) -> TileMapLayer:
 		var x_flipped = cell["x_flipped"]
 		var y_flipped = cell["y_flipped"]
 		
-		
-		var alternate_id:int = 0 #Godot 3 didn't support this, but 4 does.
+		var alternate_id:int = 0
 		alternate_id |= TileSetAtlasSource.TRANSFORM_FLIP_H if x_flipped else 0
 		alternate_id |= TileSetAtlasSource.TRANSFORM_FLIP_V if y_flipped else 0
 		alternate_id |= TileSetAtlasSource.TRANSFORM_TRANSPOSE if transposed else 0
 		out.set_cell(coord, tileset.get_source_id(source), atlas_coord, alternate_id)
-		#var tile_data:TileData = out.get_cell_tile_data(coord)
-		##tile_data.set_allow_tranform
-		#tile_data.flip_h = cell["x_flipped"]
-		#tile_data.flip_v = cell["y_flipped"]
-		#tile_data.transpose = cell["transposed"]
-		#out._tile_data_runtime_update(coord, tile_data)
 	
 	return out
 

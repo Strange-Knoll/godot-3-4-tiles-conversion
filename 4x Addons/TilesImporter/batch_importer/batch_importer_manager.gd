@@ -5,13 +5,7 @@ const BatchImporterUIScript:Script = preload("batch_importer_ui.gd")
 const BatchImporterUIScene:PackedScene = preload("batch_importer_ui.tscn")
 const BatchImporterScript:Script = preload("batch_importer.gd")
 var importer:BatchImporterScript
-
-var _plugin:EditorPlugin
-#var _file_dialog:EditorFileDialog
 var _ui:Window
-
-func set_plugin(p:EditorPlugin) -> void:
-	if _plugin == null: _plugin = p
 
 func open_file_dialog() -> void:
 	var dialog := _get_file_dialog()

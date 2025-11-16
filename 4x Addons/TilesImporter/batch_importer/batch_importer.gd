@@ -3,16 +3,16 @@ extends RefCounted
 
 const TileMapImporter = preload("../tilemap/tilemap_importer.gd")
 const TileSetImporter = preload("../tileset/tileset_importer.gd")
-var map_importer:TileMapImporter
-var set_importer:TileSetImporter
+
+
 
 signal post_log(report:String)
 signal post_progress()
 signal post_entry_count(val:int)
 
-func _init() -> void:
-	map_importer = TileMapImporter.new()
-	set_importer = TileSetImporter.new()
+#func _init() -> void:
+	#map_importer = TileMapImporter.new()
+	#set_importer = TileSetImporter.new()
 
 func read_index(index:Dictionary):
 	if not (index.has("header") and index["header"] == "sk:gd3-4_tm/ts_ind"):
@@ -25,6 +25,7 @@ func read_index(index:Dictionary):
 	_replace_tilemaps(index)
 
 func _replace_tilesets(index:Dictionary) -> void:
+	var set_importer := TileSetImporter.new()
 	post_log.emit("Beginning TileSet Import...\n")
 	for tileset_entry in index["tilesets"]:
 		var data = load_json(index["tileset_dir"]+"/"+tileset_entry+".json")
@@ -36,6 +37,7 @@ func _replace_tilesets(index:Dictionary) -> void:
 		post_progress.emit()
 
 func _replace_tilemaps(index:Dictionary) -> void:
+	var map_importer := TileMapImporter.new()
 	post_log.emit("Beginning TileMap Import...\n")
 	var scene_groups:Dictionary[String, Array]
 	for tilemap_entry in index["tilemaps"].keys():
@@ -62,11 +64,10 @@ func _replace_tilemaps(index:Dictionary) -> void:
 			var new_layer = map_importer.create_layer_from_data(old_tilemap, data)
 			if new_layer != null:
 				map_importer.replace_tilemap(old_tilemap, new_layer)
+			post_progress.emit()
 		new_packed_scene.pack(scene)
-		#map_importer.backup_and_save(scene_path, new_packed_scene)
 		map_importer.overwrite_save(scene_path, new_packed_scene)
 		scene.queue_free()
-		post_progress.emit()
 		
 func load_json(file_path:String) -> Dictionary:
 	post_log.emit("loading json file from: "+file_path+"\n")

@@ -1,20 +1,5 @@
 @tool
-extends EditorContextMenuPlugin
-
-var file_dialogue:EditorFileDialog
-var selected_tileset:TileSet
-
-func create_file_dialogue() -> void:
-	print("create_file_dialogue")
-	var dialogue:EditorFileDialog = EditorFileDialog.new()
-	dialogue.name = "TileSetConverterFileDialogue"
-	dialogue.access = EditorFileDialog.ACCESS_FILESYSTEM
-	dialogue.file_mode = EditorFileDialog.FILE_MODE_OPEN_FILE
-	dialogue.filters = ["*.json"]
-	dialogue.title = "Select TileSet Conversion Data"
-	dialogue.file_selected.connect(_on_file_selected)
-	file_dialogue = dialogue
-	EditorInterface.get_base_control().add_child(file_dialogue)
+extends RefCounted
 
 func overwrite_save(old_tileset_path:String, new_tileset:TileSet):
 	ResourceSaver.save(new_tileset, old_tileset_path)
@@ -30,43 +15,6 @@ func backup_and_save(old_tileset_path:String, new_tileset:TileSet):
 	ResourceSaver.save(old)
 	ResourceSaver.save(new_tileset, swap_path)
 	ResourceSaver.set_uid(swap_path, rid.get_id())
-
-func _popup_menu(resource_paths: PackedStringArray) -> void:
-	var res = load(resource_paths[0])
-	if not res is TileSet: return
-	selected_tileset = res
-	add_context_menu_item("Convert Tileset", _on_click)
-	#print(resource_paths)
-
-func _on_click(_res_path:PackedStringArray):
-	if EditorInterface.get_base_control().get_node_or_null("TileSetConverterFileDialogue") == null:
-		create_file_dialogue()
-	file_dialogue.popup_file_dialog()
-
-func _on_file_selected(path:String):
-	var data:Dictionary = load_data_from_file(path)
-	var tileset:TileSet = create_tileset_from_data(data)
-	backup_and_save(selected_tileset.resource_path, tileset)
-
-#func _move_old_res_to_dump(old:String):
-	#print("_move_old_res_to_dump( ", old, " )")
-	#var old_path = old
-	## Open a DirAccess at the project root
-	#var dir := DirAccess.open("res://")
-	## Ensure destination folder exists
-	#var target_folder = "res://conversion_dump/"
-	#if not dir.dir_exists(target_folder):
-		#print("creating dump folder")
-		#var err = dir.make_dir("conversion_dump")
-		#if err != OK:
-			#push_error("Failed to create folder: " + str(err))
-			#return
-	## Move the file
-	#var new_path = target_folder + old_path.get_file()
-	#print("file dumped to: ", new_path)
-	#var err = dir.rename(old_path, new_path)
-	#if err == OK: print("Moved successfully!")
-	#else: push_error("Failed to move: " + str(err))
 
 func load_data_from_file(file_path:String) -> Dictionary:
 	#print("load_data_from_file")
@@ -91,11 +39,6 @@ func create_tileset_from_data(data:Dictionary) -> TileSet:
 	for tile_data in data["tile_data"]:
 		var texture_path = tile_data["tile"]["texture"]
 		groups.get_or_add(texture_path, []).append(tile_data)
-		#if not groups.keys().has(texture_path):
-			#print("new tex found: ", texture_path)
-			#groups.merge({texture_path:[]})
-			##groups[texture_path] = []
-		#groups[texture_path].append(tile_data)
 	
 	print("groups: ", groups.keys())
 	for path in groups.keys():
@@ -132,9 +75,6 @@ func create_tileset_from_data(data:Dictionary) -> TileSet:
 				tile["coord"]["x"] / tile["tile"]["region"][2], 
 				tile["coord"]["y"] / tile["tile"]["region"][3]
 			)
-			#print("tile id: ", tile["id"])
-			#print("sources: ", out.get_source_count()) 
-			#print("source:", source, "\n")
 			source.create_tile(pos)
 			var tile_data:TileData = source.get_tile_data(pos, 0)
 			for indx in tile["tile"]["shapes"].size()-1:
@@ -155,7 +95,6 @@ func create_tileset_from_data(data:Dictionary) -> TileSet:
 				tile_data.add_occluder_polygon(0)
 				var occ_indx = tile_data.get_occluder_polygons_count(0)-1
 				tile_data.set_occluder_polygon(0, occ_indx, occ_poly)
-	
 	return out
 
 func _string_to_v2_arr(string:String) -> PackedVector2Array:
