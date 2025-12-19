@@ -78,14 +78,14 @@ func export_to_dir(config:ExportConfiguration):
 	for tilemap in config.scan_data.tilemaps:
 		tilemap = tilemap as TileMap
 		var res_path:String = config.scan_data.tilemaps[tilemap][0]
-		print("res path for ", tilemap.name, ": ", res_path)
+		#print("res path for ", tilemap.name, ": ", res_path)
 		var node_path:String = config.scan_data.tilemaps[tilemap][1]
-		print("begin process_tilemap ", tilemap.name)
+		#print("begin process_tilemap ", tilemap.name)
 		call_deferred("emit_signal","post_log","begin process_tilemap "+tilemap.name+"\n")
-		var data = map_exporter.process_tilemap(tilemap)
+		var data = map_exporter.better_process(tilemap)
 		if not data:
 			continue
-		print("process_tilemap success ", tilemap.name)
+		#print("process_tilemap success ", tilemap.name)
 		call_deferred("emit_signal","post_log","process_tilemap success \n")
 		data["scene_resource_path"] = res_path
 		data["node_path"] = node_path
@@ -97,7 +97,7 @@ func export_to_dir(config:ExportConfiguration):
 	for tileset in config.scan_data.tilesets:
 		var path:String = config.scan_data.tilesets[tileset]
 		call_deferred("emit_signal","post_log", "begin exporting tileset")
-		var data = set_exporter.process_tileset(tileset)
+		var data = set_exporter.better_process(tileset)
 		call_deferred("emit_signal","post_log", "Exporting tileset %s\n" % path.replace("/", "%"))
 		var unique_name = _generate_unique_name(16)
 		index["tilesets"][unique_name] = path
