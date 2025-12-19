@@ -16,11 +16,11 @@ This repo contains a set of plugins for converting TileSet and TileMap data from
 #### Export Process
 Copy the TilesExporter folder from the 3x Addons folder into the res://addons folder of your Godot 3 project, then enable the plugin.
 
-**Individual Exports:** Select either a TileSet resource from your filesystem, or a TileMap node from the scene tree. In the inspector you will see a button at the top labeled "Export TileMap/TileSet". Pressing this button will open a file dialog where you may chose where to save the export data. (It is recommended you name the file, but if you do not the file will be given the name of the resource/node it is exporting.)
-
-**Batch Exports:** In the top menu bar go to "Project -> Tools -> TileMap/TileSet Batch Exporter." Selecting this option will open a dialog showing the files and scene that have been scanned. Once the scan is complete you can chose to "Export in Place" or "Export to Dir".
+**(Recomended) Batch Exports:** In the top menu bar go to "Project -> Tools -> TileMap/TileSet Batch Exporter." Selecting this option will open a dialog showing the files and scene that have been scanned. Once the scan is complete you can chose to "Export in Place" or "Export to Dir".
 - *Export in Place:* This will export the TileSet and TileMap data along side the resources / scene files they originated from. (Note: the batch importer for 4x does not currently handle this case)
 - *Export to Dir:* This will allow you to select a directory to export the conversion data too. Choosing this option will open a file dialog where you can select the folder you want the conversion data saved to. A "TileSets" and "TileMaps" folder will be created along side an index.json file. The index file is used by the batch importer during the import process. (It is recommended that you export to a folder outside of your project.)
+
+**Individual Exports:** Select either a TileSet resource from your filesystem, or a TileMap node from the scene tree. In the inspector you will see a button at the top labeled "Export TileMap/TileSet". Pressing this button will open a file dialog where you may chose where to save the export data. (It is recommended you name the file, but if you do not the file will be given the name of the resource/node it is exporting.)
 
 You can now close your project in Godot 3
 
